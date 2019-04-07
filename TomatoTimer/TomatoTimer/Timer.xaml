@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="TomatoTimer.Timer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TomatoTimer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d" Width="634.978">
+    <Page.Background>
+        <AcrylicBrush/>
+    </Page.Background>
+
+    <Grid  Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" Margin="-40,180,0,0" Text="Ciclo " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Name="currentCicle" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" Margin="95,180,0,0" Text="4" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock  Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="143,214,0,0" Text="/" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock  Name="totCicles" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="170,214,0,0" Text="6" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <!-- --><TextBlock Loaded="Window_Loaded" Name="TimerLabel" HorizontalAlignment="Center" Margin="0,354,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="92" FontWeight="Light"/>
+
+        <!--Timer     
+        <TextBlock HorizontalAlignment="Left" Margin="168,354,0,0" Text="{Binding TimerText, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="92" FontWeight="Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="382,354,0,0" Text="47" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="92" FontWeight="Light"/>
+
+        <TextBlock HorizontalAlignment="Center" Margin="65,354,0,0" Text=":" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,354,0,0" Text="17" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="92"/>
+        <TextBlock HorizontalAlignment="Center" Margin="175,354,0,0" Text=":" TextWrapping="Wrap" VerticalAlignment="Top"/>-->
+    
+    </Grid>
+</Page>
