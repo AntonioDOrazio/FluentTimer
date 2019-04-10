@@ -32,10 +32,12 @@ namespace TomatoTimer
         public double DurataCiclo { get; set; }
         public double DurataPausa { get; set; }
         private double InizioTimer { get; set; }
-
+        private Boolean IsFocus { get; set; }
+        
         public Timer()
         {
             this.InitializeComponent();
+            IsFocus = true;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e) 
@@ -65,13 +67,60 @@ namespace TomatoTimer
             TimeSpan time = TimeSpan.FromSeconds(InizioTimer);
             string str = time.ToString(@"hh\:mm\:ss");
             TimerLabel.Text = str;
+
+            // Fine del ciclo di focus
+            if (InizioTimer == 0 && IsFocus)
+            {
+                IsFocus = false;
+                InizioTimer = DurataPausa;
+                CurCiclo++;
+                currentCicle.Text = CurCiclo.ToString();
+
+                HideCiclo();
+                ShowPausa();
+            }
+
+            // Fine del ciclo di pausa
+            else if (InizioTimer == 0 && !IsFocus) {
+
+                if (CurCiclo > TotCicli)
+                {
+                    // Focus completato
+                } else {
+                    IsFocus = true;
+                    InizioTimer = DurataCiclo;
+
+                    HidePausa();
+                    ShowCiclo();
+                }
+                  
+            } 
         }
 
-
-        // ToDelete
-        private void scrollText_Unloaded(object sender, RoutedEventArgs e)
+        private void ShowCiclo()
         {
-          //  timer.Stop();
+            labelCicle.Visibility = Visibility.Visible;
+            currentCicle.Visibility = Visibility.Visible;
+            labelSlash.Visibility = Visibility.Visible;
+            totCicles.Visibility = Visibility.Visible;
+        }
+
+        private void HideCiclo()
+        {
+            labelCicle.Visibility = Visibility.Collapsed;
+            currentCicle.Visibility = Visibility.Collapsed;
+            labelSlash.Visibility = Visibility.Collapsed;
+            totCicles.Visibility = Visibility.Collapsed;
+        }
+
+        private void ShowPausa()
+        {
+            labelPausa.Visibility = Visibility.Visible;
+        }
+
+        private void HidePausa()
+        {
+            labelPausa.Visibility = Visibility.Collapsed;
         }
 
     }

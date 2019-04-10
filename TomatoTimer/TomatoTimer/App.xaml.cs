@@ -31,6 +31,10 @@ namespace TomatoTimer
         /// </summary>
         public App()
         {
+
+            ApplicationView.PreferredLaunchViewSize = new Size { Height = 400, Width = 720 };
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }

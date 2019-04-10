@@ -5,10 +5,10 @@
     xmlns:local="using:TomatoTimer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="634.978"
+    mc:Ignorable="d" 
     >
 
-    <Grid  Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
+    <Grid Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RequestedTheme="Default" CanDrag="True" Padding="0,0,0,-1">
 
         <TextBlock HorizontalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" Margin="0,128,0,0" Text="Fluent Timer" TextWrapping="Wrap" VerticalAlignment="Top" Height="132" SelectionChanged="TextBlock_SelectionChanged" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" >
             <TextBlock.RenderTransform>
@@ -16,8 +16,8 @@
             </TextBlock.RenderTransform>
         </TextBlock>
 
-        
-        <ListBox x:Name="MyListBox" ItemsSource="{x:Bind Numbers}" HorizontalAlignment="Center" Margin="0,363,0,0" VerticalAlignment="Top"  Height="38" Width="242" Background="#FF81B1C2" SelectionChanged="ListBox_SelectionChanged" >
+
+        <ListBox x:Name="MyListBox" SelectedIndex="3" ItemsSource="{x:Bind Numbers}" HorizontalAlignment="Center" Margin="0,363,0,0" VerticalAlignment="Top"  Height="38" Width="242" Background="#FF81B1C2" SelectionChanged="ListBox_SelectionChanged" >
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -34,7 +34,7 @@
         <Button  CornerRadius="1000"  Style="{StaticResource ButtonRevealStyle}" HorizontalAlignment="Center" FontSize="48" Margin="0,744,0,0" VerticalAlignment="Top" Height="123" Width="123" Click="Button_Click">
             <SymbolIcon   Symbol="Play" HorizontalAlignment="Stretch" Height="20" Margin="0,0,0,0" VerticalAlignment="Top"/>
         </Button>
-        <TextBlock FontSize="15" FontWeight="SemiBold" Text="Cicli di studio" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="197,338,0,0" VerticalAlignment="Top"/>
+        <TextBlock FontSize="15" FontWeight="SemiBold" Text="Cicli di studio" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top"/>
 
         <ContentDialog x:Name="emptyFieldsDialog"
           

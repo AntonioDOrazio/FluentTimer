@@ -22,14 +22,12 @@ namespace TomatoTimer
     /// </summary>
     /// 
 
-
     public class AnotherPagePayload
     {
         public int TotCicli { get; set; }
         public double DurataCiclo { get; set; }
         public double DurataPausa { get; set; }
     }
-
 
     public sealed partial class MainPage : Page
     {
@@ -43,13 +41,15 @@ namespace TomatoTimer
         private static TimeSpan? cicleLength = null;
         public MainPage()
         {
-
             this.InitializeComponent();
 
             for (Int32 i=1; i<7; i++)
             {
                 Numbers.Add(i);
             }
+
+            cicleTime.SelectedTime = TimeSpan.FromMinutes(25);
+            pauseTime.SelectedTime = TimeSpan.FromMinutes(5);
         }
 
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
@@ -66,17 +66,15 @@ namespace TomatoTimer
                 TimeSpan NonNullableTs;
                 NonNullableTs = (TimeSpan) CicleLength;
                 payload.DurataCiclo = NonNullableTs.TotalSeconds;
-                NonNullableTs = (TimeSpan)PauseLength;
+                NonNullableTs = (TimeSpan) PauseLength;
                 payload.DurataPausa = NonNullableTs.TotalSeconds;
                 this.Frame.Navigate(typeof(Timer), payload);
-
             }
             else
             {
                 await emptyFieldsDialog.ShowAsync();
             }
         }
-
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

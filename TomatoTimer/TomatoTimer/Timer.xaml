@@ -11,10 +11,13 @@
     </Page.Background>
 
     <Grid  Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
-        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" Margin="-40,180,0,0" Text="Ciclo " TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock Name="currentCicle" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" Margin="95,180,0,0" Text="4" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock  Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="143,214,0,0" Text="/" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock  Name="totCicles" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="170,214,0,0" Text="6" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Visibility="Visible" Name="labelCicle" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" Margin="-40,180,0,0" Text="Ciclo " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Visibility="Visible" Name="currentCicle" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" Margin="95,180,0,0" Text="4" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Visibility="Visible" Name="labelSlash" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="143,214,0,0" Text="/" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Visibility="Visible" Name="totCicles" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="170,214,0,0" Text="6" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBlock Visibility="Collapsed" Name="labelPausa" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" Margin="0,180,0,0" Text="Pausa " TextWrapping="Wrap" VerticalAlignment="Top"/>
+
 
         <!-- --><TextBlock Loaded="Window_Loaded" Name="TimerLabel" HorizontalAlignment="Center" Margin="0,354,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="92" FontWeight="Light"/>
 
